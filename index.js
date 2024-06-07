@@ -5,6 +5,8 @@ const closeIconEl = document.querySelector(".close-icon")
 // This will be the x button that closes the window
 // The window after being closed will remove the playing video window
 const trailerContainerEl = document.querySelector(".trailer-container");
+const videoEl = document.querySelector("video");
+// this const here controls the functionality for the video
 
 btnEl.addEventListener("click", () => {
     trailerContainerEl.classList.remove("active");
@@ -13,5 +15,7 @@ btnEl.addEventListener("click", () => {
 
 closeIconEl.addEventListener("click", () => {
     trailerContainerEl.classList.add("active");
+    videoEl.pause();
+    videoEl.currentTime = 0;
 
 })
